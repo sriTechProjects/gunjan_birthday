@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Classified Memories 😂</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="memory-bg">
+    <div id="transition-overlay"></div>
+    <script src="transition.js"></script>
+    <main class="memory-container">
+      <h1 class="mem-title">Classified Memories 😂</h1>
+      <p class="mem-subtitle">Handle with care ⚠️</p>
+
+      <section class="mem-grid" aria-live="polite">
+        <div class="mem-card bg-1 rotate-1">Pura school ka time nikal gaya<br><small>Still not sure how😂</small></div>
+        <div class="mem-card bg-2 rotate-2">Remember the time we laughed even though humko reason nahi yaad</div>
+        <div class="mem-card bg-3 rotate-3">Taang kheechna kabhi band nahi hua, but still it was fun</div>
+        <div class="mem-card bg-4 rotate-4">Our first group study with our 10th Mates at your house, fun and quite serious moments</div>
+        <div class="mem-card bg-1 rotate-5">Now at our college times, being in different colleges, still calling each other and apne apne colleges ki bhadas nikalna </div>
+        <div class="mem-card bg-2 rotate-6">Still remember the call prank that you planned against me(agli baar aur acchi planning karna)</div>
+        <div class="mem-card bg-2 rotate-6">Just that it is very cool to have you as my friend</div>
+      </section>
+
+      <div class="mem-next">
+        <button id="nextBtn" class="open-btn">More surprises ahead →</button>
+      </div>
+    </main>
+
+    <script>
+      const nextBtn = document.getElementById('nextBtn');
+      nextBtn.addEventListener('click', () => {
+        nextBtn.disabled = true;
+        nextBtn.style.transform = 'scale(0.98)';
+        setTimeout(() => {
+          if (window.navigateWithTransition) navigateWithTransition('animation.html');
+          else window.location.href = 'animation.html';
+        }, 160);
+      });
+      nextBtn.addEventListener('keyup', (e) => { if (e.key === 'Enter') nextBtn.click(); });
+    </script>
+  </body>
+</html>

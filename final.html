@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happy Birthday 🌻 — Final</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="final-bg">
+    <div id="transition-overlay"></div>
+    <script src="transition.js"></script>
+    <main class="final-viewport">
+      <article class="final-card" role="article" aria-labelledby="finalTitle">
+        <h1 id="finalTitle" class="final-heading">Happy Birthday 🌻</h1>
+
+        <p class="final-message">Thank you for all the memories,
+all the laughs,
+and all the chaos 😂
+
+Stay happy,
+stay crazy,
+and keep smiling always 🌻</p>
+
+        <div class="final-sign">— From your friend Srivaths</div>
+
+        <button id="replayBtn" class="final-btn">Play again 🔁</button>
+
+        <!-- corner sunflowers -->
+        <span class="corner-sunflower corner-top-left">🌻</span>
+        <span class="corner-sunflower corner-top-right">🌻</span>
+        <span class="corner-sunflower corner-bottom-left">🌻</span>
+        <span class="corner-sunflower corner-bottom-right">🌻</span>
+      </article>
+    </main>
+
+    <script>
+      const btn = document.getElementById('replayBtn');
+      btn.addEventListener('click', () => {
+        btn.disabled = true;
+        btn.style.transform = 'scale(0.98)';
+        setTimeout(() => { if (window.navigateWithTransition) navigateWithTransition('index.html'); else window.location.href = 'index.html'; }, 160);
+      });
+      btn.addEventListener('keyup', (e) => { if (e.key === 'Enter') btn.click(); });
+    </script>
+  </body>
+</html>
